@@ -2,8 +2,7 @@ import discord
 import feedparser
 import asyncio
 
-TOKEN = "MTQyOTQxODc0MzQ5NDM0ODg5MA.G1laO7.pxB1lzxms3o6k5RYeCX3oP8vew2HRPRKPaPc_8
-"  # replace with your bot token
+TOKEN = "YOUR-BOT-TOKEN"  # replace with your bot token
 CHANNEL_ID = 123456789012345678  # replace with your channel ID
 
 # AO3 feed for My Hero Academia
