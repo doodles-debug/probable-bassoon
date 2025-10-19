@@ -1,19 +1,19 @@
 import discord
 import feedparser
 import asyncio
+import os
 
-TOKEN = "YOUR-BOT-TOKEN"  # replace with your bot token
+TOKEN = os.getenv("TOKEN")  # secure way to load token from environment variable
 CHANNEL_ID = 123456789012345678  # replace with your channel ID
 
-# AO3 feed for My Hero Academia
 AO3_FEED = "https://archiveofourown.org/tags/My%20Hero%20Academia%20%7C%20Boku%20no%20Hero%20Academia/works.atom"
 
 intents = discord.Intents.default()
 intents.message_content = True
-
 client = discord.Client(intents=intents)
 
-last_posted = None  # To track last fic
+last_posted = None  # Track last fic
+
 
 async def check_ao3_updates():
     global last_posted
@@ -38,11 +38,13 @@ async def check_ao3_updates():
             )
             await channel.send("📚 **New My Hero Academia fic posted on AO3!**", embed=embed)
 
-        await asyncio.sleep(900)  # Check every 15 minutes
+        await asyncio.sleep(900)  # check every 15 minutes
+
 
 @client.event
 async def on_ready():
     print(f"✅ Logged in as {client.user}")
+
 
 client.loop.create_task(check_ao3_updates())
 client.run(TOKEN)
