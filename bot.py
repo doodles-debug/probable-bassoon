@@ -44,7 +44,7 @@ async def check_ao3_updates():
 @client.event
 async def on_ready():
     print(f"✅ Logged in as {client.user}")
+check_ao3_updates.is_running():
+    check_ao3_update.start()
 
-
-client.loop.create_task(check_ao3_updates())
 client.run(TOKEN)
