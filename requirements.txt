@@ -1,2 +1,5 @@
 discord.py
 feedparser
+python-dotenv
+ao3_api
+inputimeout
