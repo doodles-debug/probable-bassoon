@@ -3,4 +3,4 @@ feedparser
 python-dotenv
 ao3_api
 inputimeout
-bin.setup
+gunicorn
