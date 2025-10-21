@@ -43,7 +43,7 @@ async def check_ao3_updates():
 
 if "Terms of Service" in response.text or "Privacy Policy" in response.text:
     print("⚠️ AO3 ToS page detected — manual confirmation needed.")
-    return
+         return
 
 @client.event
 async def on_ready():
