@@ -41,6 +41,9 @@ async def check_ao3_updates():
 
         await asyncio.sleep(900)  # check every 15 minutes
 
+if "Terms of Service" in response.text or "Privacy Policy" in response.text:
+    print("⚠️ AO3 ToS page detected — manual confirmation needed.")
+    return
 
 @client.event
 async def on_ready():
