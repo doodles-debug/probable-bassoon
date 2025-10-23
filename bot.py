@@ -7,7 +7,7 @@ import os
 TOKEN = os.getenv("TOKEN")  # secure way to load token from environment variable
 CHANNEL_ID = 123456789012345678  # replace with your channel ID
 
-AO3_FEED = "https://archiveofourown.org/tags/My%20Hero%20Academia%20%7C%20Boku%20no%20Hero%20Academia/works.atom"
+AO3_FEED = "https://archiveofourown.org/tags/3741107/feed.atom"
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -41,9 +41,6 @@ async def check_ao3_updates():
 
         await asyncio.sleep(900)  # check every 15 minutes
 
-if "Terms of Service" in response.text or "Privacy Policy" in response.text:
-    print("⚠️ AO3 ToS page detected — manual confirmation needed.")
-         return
 
 @client.event
 async def on_ready():
